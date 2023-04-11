@@ -24,9 +24,12 @@ SECRET_KEY = 'django-insecure-s5(1l2crl&tjs%&lf05xuhzj6j41jr%ge@&@@kb#sb^j47pfn7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-CORS_ALLOW_ALL_ORIGINS = True
-
+ALLOWED_HOSTS = ['localhost',"restorater.ozeliurs.com"]
+CORS_ALLOWED_ORIGINS =  [
+    "http://localhost:8000",
+    "https://localhost:8000",
+    "https://restorater.ozeliurs.com"
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -148,3 +151,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 ADMINS = (
     ('admin', 'password'),
 )
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",
+    "https://localhost:8000",
+    "https://restorater.ozeliurs.com"
+]
