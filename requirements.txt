@@ -4,3 +4,4 @@ djangorestframework
 djangorestframework-simplejwt
 pillow
 whitenoise
+django-cors-headers
