@@ -14,3 +14,10 @@ admin.site.register(Comment)
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
     list_display = UserAdmin.list_display + ('is_moderator', 'is_restaurateur', 'is_consumer')
+
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ('is_moderator', 'is_restaurateur', 'is_consumer')}),
+    )
+    add_fieldsets = UserAdmin.add_fieldsets + (
+        (None, {'fields': ('is_moderator', 'is_restaurateur', 'is_consumer')}),
+    )
