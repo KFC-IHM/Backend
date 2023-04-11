@@ -3,7 +3,7 @@ services:
     build: .
     container_name: "restorater_backend"
     volumes:
-      - restorater:/
+      - restorater:/usr/src/app
     networks:
       - traefik
     labels:
