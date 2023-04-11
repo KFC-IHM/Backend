@@ -8,7 +8,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if CustomUser.objects.count() == 0:
             for user,password in settings.ADMINS:
-                CustomUser.objects.create_superuser(user, password)
+                CustomUser.objects.create_superuser(username=user, password=password)
                 print('Admin account created for {} with password {}'.format(user, password))
         else:
             print('Admin accounts can only be initialized if no Accounts exist')
