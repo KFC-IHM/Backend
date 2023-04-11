@@ -1,5 +1,21 @@
 services:
-  django:
+  restorater:
     build: .
-    ports:
-      - "8000:8000"
+    container_name: "restorater_backend"
+    volumes:
+      - restorater:/
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.restorater.rule=Host(`restorater.ozeliurs.com`)"
+      - "traefik.http.routers.restorater.entrypoints=websecure"
+      - "traefik.http.routers.restorater.tls=true"
+      - "traefik.http.services.restorater.loadbalancer.server.port=8000"
+      
+networks:
+  traefik:
+    external: true
+    
+volumes:
+  restorater:
