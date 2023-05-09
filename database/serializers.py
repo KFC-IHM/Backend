@@ -4,9 +4,9 @@ from database.models import CustomUser, Restaurant, OpenHoursWeek, Review, Comme
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
-    review_set = serializers.HyperlinkedRelatedField(many=True, view_name='review-detail', read_only=True)
-    comment_set = serializers.HyperlinkedRelatedField(many=True, view_name='comment-detail', read_only=True)
-    restaurant_set = serializers.HyperlinkedRelatedField(many=True, view_name='restaurant-detail', read_only=True)
+    review_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    comment_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    restaurant_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = CustomUser
@@ -17,8 +17,8 @@ class CustomUserSerializer(serializers.ModelSerializer):
 
 class RestaurantSerializer(serializers.ModelSerializer):
     # related fields
-    openhoursweek_set = serializers.HyperlinkedRelatedField(many=True, view_name='openhoursweek-detail', read_only=True)
-    review_set = serializers.HyperlinkedRelatedField(many=True, view_name='review-detail', read_only=True)
+    openhoursweek_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    review_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Restaurant
@@ -33,7 +33,7 @@ class OpenHoursWeekSerializer(serializers.ModelSerializer):
 
 class ReviewSerializer(serializers.ModelSerializer):
     # related fields
-    comment_set = serializers.HyperlinkedRelatedField(many=True, view_name='comment-detail', read_only=True)
+    comment_set = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Review
