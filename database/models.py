@@ -6,13 +6,13 @@ class CustomUser(AbstractUser):
     is_moderator = models.BooleanField(default=False)
     is_restaurateur = models.BooleanField(default=False)
     is_consumer = models.BooleanField(default=False)
-    profile_image = models.ImageField(upload_to='images/user/', blank=True, null=True)
+    profile_image = models.TextField(default='https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png')
 
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to='images/restaurant/')
+    image = models.TextField(default='https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png')
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
