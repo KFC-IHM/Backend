@@ -31,7 +31,8 @@ class RestaurantSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Restaurant
-        fields = ('id', 'name', 'description', 'image', 'owner', 'openhoursweek_set', 'review_set')
+        fields = ('id', 'name', 'description', 'image', 'owner', 'openhoursweek_set', 'review_set', 'latitude',
+                  'longitude')
 
 
 class CustomUserSerializer(serializers.ModelSerializer):

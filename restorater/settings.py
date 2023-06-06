@@ -24,11 +24,12 @@ SECRET_KEY = 'django-insecure-s5(1l2crl&tjs%&lf05xuhzj6j41jr%ge@&@@kb#sb^j47pfn7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost',"restorater.ozeliurs.com"]
-CORS_ALLOWED_ORIGINS =  [
+ALLOWED_HOSTS = ['localhost', "restorater.ozeliurs.com", "127.0.0.1"]
+CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://localhost:8000",
-    "https://restorater.ozeliurs.com"
+    "https://restorater.ozeliurs.com",
+    "http://127.0.0.1:8000",
 ]
 # Application definition
 
