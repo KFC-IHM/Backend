@@ -28,3 +28,7 @@ b
 2database/migrations/0005_alter_restaurant_image.py,3\1\31cfab005d239409aa403caeabdf999d49dfd9c2
 j
 :database/migrations/0004_alter_customuser_profile_image.py,4\4\446583667ad680688addea49e3bed267dd7304ce
+B
+restorater/asgi.py,e\d\ed1cd87061dae132a42e438451cfed46ed164612
+t
+Ddatabase/migrations/0006_restaurant_latitude_restaurant_longitude.py,5\2\52587afc5f3d4fcbfc42e1ade51cd27a7808806c
