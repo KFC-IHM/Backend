@@ -14,6 +14,8 @@ class Restaurant(models.Model):
     description = models.TextField()
     image = models.TextField(default='https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png')
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
 
     def __str__(self):
         return self.name
